@@ -11,18 +11,18 @@ import {
 } from "@mui/material";
 
 export default function ExpensesTable({ actions, setCompleted }) {
+  console.log("🚀 ~ ExpensesTable ~ actions:", actions)
   
     const handleToggleCompleted = (index) => {
     const updated = [...actions];
+    console.log("🚀 ~ handleToggleCompleted ~ updated:", updated)
     updated[index].completed = !updated[index].completed;
     setCompleted(updated);
+    console.log("🚀 ~ handleToggleCompleted ~ updated:", updated)
   };
 
   return (
     <Paper sx={{ p: 2, mt: 3, maxHeight: "70vh" }}>
-      <Typography variant="h6" gutterBottom>
-        טבלת הוצאות
-      </Typography>
       <TableContainer sx={{ height: "100%" }}>
         <Table>
           <TableHead>

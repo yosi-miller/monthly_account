@@ -1,0 +1,32 @@
+/* עיצוב לכותרת וכפתור */
+.header-section {
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+.header-section h4 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  color: #333;
+}
+
+.add-action button {
+  background-color: #2878a7;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+}
+
+.add-action button:hover {
+  background-color: #1f5d7f;
+}
