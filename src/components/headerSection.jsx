@@ -1,6 +1,6 @@
 import '../style/headerSelction.css';
 
-function HeaderSection({ showAddActionPopup, setShowAddActionPopup }) {
+function HeaderSection({ showAddActionPopup, setShowAddActionPopup, monthlyActions }) {
   // Function to toggle the visibility of the AddActionPopup
   const toggleAddActionPopup = () => {
     setShowAddActionPopup(!showAddActionPopup);
@@ -8,7 +8,7 @@ function HeaderSection({ showAddActionPopup, setShowAddActionPopup }) {
 
   return (
     <div className="header-section">
-      <h4>טבלת הוצאות</h4>
+      <h4>טבלת הוצאות לחודש: {monthlyActions}</h4>
       <div className="add-action">
         <button onClick={toggleAddActionPopup}>
           {showAddActionPopup ? "סגור" : "הוספת הוצאה"}

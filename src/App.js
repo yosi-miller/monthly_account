@@ -7,6 +7,7 @@ import HeaderSection from "./components/headerSection.jsx";
 function App() {
   const [showAddActionPopup, setShowAddActionPopup] = useState(false);
   const [actions, setActions] = useState([]); // State to manage actions
+  const [monthlyActions, setMonthlyActions] = useState(new Date().toISOString().slice(0, 7)); // State to manage monthly actions
 
   const handleFormSubmit = (formData) => {
     setActions([...actions, formData]); // Add the new action to the list
@@ -15,12 +16,23 @@ function App() {
 
   return (
     <>
-      <Header />
+      <Header
+        monthlyActions={monthlyActions}
+        setMonthlyActions={setMonthlyActions}
+      />
       <div className="App">
-        <HeaderSection showAddActionPopup={showAddActionPopup} setShowAddActionPopup={setShowAddActionPopup} />
+        <HeaderSection
+          showAddActionPopup={showAddActionPopup}
+          setShowAddActionPopup={setShowAddActionPopup}
+          monthlyActions={monthlyActions}
+        />
         {showAddActionPopup && <AddActionPopup onSubmit={handleFormSubmit} />}
         <div className="actions-list">
-          <ExpensesTable actions={actions} setCompleted={setActions} />
+          <ExpensesTable
+            actions={actions}
+            setCompleted={setActions}
+            monthlyActions={monthlyActions}
+          />
         </div>
       </div>
     </>

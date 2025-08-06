@@ -1,6 +1,6 @@
-import '../style/header.css';
+import "../style/header.css";
 
-export default function Header() {
+export default function Header({ setMonthlyActions }) {
   return (
     <header className="header">
       <h1>ניהול הכנסות והוצאות</h1>
@@ -8,12 +8,17 @@ export default function Header() {
         <ul>
           <li>הכנסות</li>
           <li>הוצאות</li>
-          <li >
+          <li>
             <label>
               חודש תצוגה:
-              <input type="month" name="date" required />
+              <input
+                type="month"
+                name="date"
+                required
+                defaultValue={new Date().toISOString().slice(0, 7)}
+                onChange={(e) => setMonthlyActions(e.target.value)}
+              />
             </label>
-            <button type="submit">הצג</button>
           </li>
         </ul>
       </nav>
