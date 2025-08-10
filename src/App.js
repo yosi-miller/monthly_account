@@ -3,10 +3,12 @@ import AddActionPopup from "./components/addActionPopup.jsx";
 import Header from "./components/heder.jsx";
 import ExpensesTable from "./components/expensesTable.jsx";
 import HeaderSection from "./components/headerSection.jsx";
+import fakeData from "./data/fakeExpensesData.js"; 
 
 function App() {
   const [showAddActionPopup, setShowAddActionPopup] = useState(false);
-  const [actions, setActions] = useState([]); // State to manage actions
+ 
+  const [actions, setActions] = useState(fakeData); // State to manage actions
   const [monthlyActions, setMonthlyActions] = useState(
     new Date().toISOString().slice(0, 7)
   ); // State to manage monthly actions

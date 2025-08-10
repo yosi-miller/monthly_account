@@ -7,7 +7,6 @@ import {
   TableRow,
   Paper,
   Checkbox,
-  Typography,
 } from "@mui/material";
 
 export default function ExpensesTable({
@@ -40,8 +39,8 @@ export default function ExpensesTable({
             </TableRow>
           </TableHead>
           <TableBody>
-            {actions.map((exp) => (
-              <TableRow key={exp.id}>
+            {actions.map((exp, index) => (
+              <TableRow key={index}>
                 <TableCell sx={{ textAlign: "center" }}>
                   {exp.actionName}
                 </TableCell>
@@ -63,7 +62,7 @@ export default function ExpensesTable({
                 <TableCell sx={{ textAlign: "center" }}>
                   <Checkbox
                     checked={Boolean(exp.completed)}
-                    onChange={() => handleToggleCompleted(exp.id)}
+                    onChange={() => handleToggleCompleted(index)}
                     color="primary"
                   />
                 </TableCell>

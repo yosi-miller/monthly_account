@@ -7,7 +7,6 @@ function AddActionPopup({ onSubmit, closePopup }) {
 
     const formData = new FormData(e.target);
     const data = {
-      id: Date.now(), // Add a default unique ID based on the current timestamp
       actionName: formData.get("actionName"),
       amount: formData.get("amount"),
       paymentMethod: formData.get("paymentMethod"),
