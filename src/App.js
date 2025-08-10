@@ -7,11 +7,18 @@ import HeaderSection from "./components/headerSection.jsx";
 function App() {
   const [showAddActionPopup, setShowAddActionPopup] = useState(false);
   const [actions, setActions] = useState([]); // State to manage actions
-  const [monthlyActions, setMonthlyActions] = useState(new Date().toISOString().slice(0, 7)); // State to manage monthly actions
+  const [monthlyActions, setMonthlyActions] = useState(
+    new Date().toISOString().slice(0, 7)
+  ); // State to manage monthly actions
+
+  const closePopup = () => {
+    setShowAddActionPopup(false);
+  };
 
   const handleFormSubmit = (formData) => {
+    // TODO: make this on AddActionPopup 
     setActions([...actions, formData]); // Add the new action to the list
-    setShowAddActionPopup(false); // סוגר את הפופאפ אחרי שליחת הטופס
+    closePopup(); // סוגר את הפופאפ אחרי שליחת הטופס
   };
 
   return (
@@ -24,9 +31,13 @@ function App() {
         <HeaderSection
           showAddActionPopup={showAddActionPopup}
           setShowAddActionPopup={setShowAddActionPopup}
+          // TODO: pass the closed popup function
           monthlyActions={monthlyActions}
         />
-        {showAddActionPopup && <AddActionPopup onSubmit={handleFormSubmit} />}
+        {showAddActionPopup && (
+          <AddActionPopup onSubmit={handleFormSubmit} closePopup={closePopup} />
+        )}
+        
         <div className="actions-list">
           <ExpensesTable
             actions={actions}

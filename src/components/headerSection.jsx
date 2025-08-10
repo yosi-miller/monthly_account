@@ -10,9 +10,10 @@ function HeaderSection({ showAddActionPopup, setShowAddActionPopup, monthlyActio
     <div className="header-section">
       <h4>טבלת הוצאות לחודש: {monthlyActions}</h4>
       <div className="add-action">
+      {!showAddActionPopup &&
         <button onClick={toggleAddActionPopup}>
-          {showAddActionPopup ? "סגור" : "הוספת הוצאה"}
-        </button>
+         הוספת הוצאה
+        </button>}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
 /* עיצוב לכותרת וכפתור */
 .header-section {
-   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 40px;
   margin: 20px 0;
   position: relative;
 }
