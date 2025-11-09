@@ -1,5 +1,5 @@
-import TablePanel from "./components/ExpensesPanel/TablePanel.jsx";
 import Header from "./components/Heder/Heder.jsx";
+import TablePanel from "./components/TablePanel/TablePanel.jsx";
 import CurrentDateProvider from "./store/CuurectDateContext.jsx";
 import "./style/app.css";
 
