@@ -1,4 +1,4 @@
-import "../style/addActionPopup.css";
+import styles from './AddActionPopup.module.css';
 
 function AddActionPopup({ onSubmit, closePopup }) {
   
@@ -21,8 +21,8 @@ function AddActionPopup({ onSubmit, closePopup }) {
   };
 
   return (
-    <div className="popup-container" onClick={closePopup}>
-      <div className="popup" onClick={(e) => e.stopPropagation()}>
+    <div className={styles.popupContainer} onClick={closePopup}>
+      <div className={styles.popup} onClick={(e) => e.stopPropagation()}>
         <h2>הוסף הוצאה</h2>
         <form onSubmit={handleSubmit}>
           <label>

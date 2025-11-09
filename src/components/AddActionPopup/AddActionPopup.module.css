@@ -1,4 +1,4 @@
-.popup-container {
+.popupContainer {
     display: flex;
     align-items: center;
     position: fixed;
@@ -52,7 +52,7 @@
     text-align: right;
 }
 
-.popup .popup-buttons{
+.popup .popupButtons {
     display: flex;
     justify-content: space-between;
     gap: 15px;

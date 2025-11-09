@@ -12,7 +12,6 @@ import {
 export default function ExpensesTable({
   actions,
   setCompleted,
-  monthlyActions,
 }) {
   
   // TODO: Implement filtering by month

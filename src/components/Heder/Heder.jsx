@@ -1,6 +1,10 @@
-import "../style/header.css";
+import "../../style/header.css";
+import { useContext } from "react";
+import { CurrentDateContext } from "../../store/CuurectDateContext.jsx";
 
-export default function Header({ setMonthlyActions }) {
+export default function Header() {
+  const { currentDate, setCurrentDate } = useContext(CurrentDateContext);
+
   return (
     <header className="header">
       <h1>ניהול הכנסות והוצאות</h1>
@@ -15,8 +19,8 @@ export default function Header({ setMonthlyActions }) {
                 type="month"
                 name="date"
                 required
-                defaultValue={new Date().toISOString().slice(0, 7)}
-                onChange={(e) => setMonthlyActions(e.target.value)}
+                defaultValue={currentDate}
+                onChange={(e) => setCurrentDate(e.target.value)}
               />
             </label>
           </li>
